@@ -13,7 +13,7 @@
 !/.env.sample
 !/.cruft.json
 !/.goreleaser.yaml
-
+!/test/*
 !.github/workflows/*.yml
 
 !*.go
