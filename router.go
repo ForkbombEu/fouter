@@ -94,12 +94,7 @@ func listSlangFilesHandler(slangFiles map[string][]string) http.HandlerFunc {
 
 			for _, file := range files {
 				fileName := filepath.Base(file)
-				// Create the correct link that includes the directory
-				// Here, we assume the path is already relative to the baseDir
-				// and it should include the directory in the href
-				link := fmt.Sprintf("/slang/%s/%s", dir, fileName) // Construct the correct href
-
-				// Display the link with the correct href and text
+				link := fmt.Sprintf("/slang/%s/%s", dir, fileName)
 				fmt.Fprintf(w, `<li><a href="%s">%s/%s</a></li>`, link, dir, fileName)
 			}
 
