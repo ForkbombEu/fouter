@@ -41,22 +41,25 @@ func TestCreateFileRouter(t *testing.T) {
 	}
 	expectedFiles := []SlangFile{
 		{
-			Path:     "test/embedded.slang", // Embedded file
-			Content:  "test embedded file content",
-			FileName: "embedded.slang",
-			Dir:      "test",
+			Path:       "test/embedded.slang", // Embedded file
+			Content:    "test embedded file content",
+			FileName:   "embedded.slang",
+			Dir:        "test",
+			IsEmbedded: true,
 		},
 		{
-			Path:     rootFilePath,
-			Content:  "root file content",
-			FileName: "root.slang",
-			Dir:      ".",
+			Path:       rootFilePath,
+			Content:    "root file content",
+			FileName:   "root.slang",
+			Dir:        ".",
+			IsEmbedded: false,
 		},
 		{
-			Path:     subFilePath,
-			Content:  "subdir file content",
-			FileName: "subfile.slang",
-			Dir:      "subdir",
+			Path:       subFilePath,
+			Content:    "subdir file content",
+			FileName:   "subfile.slang",
+			Dir:        "subdir",
+			IsEmbedded: false,
 		},
 	}
 	if len(processedFiles) != len(expectedFiles) {
